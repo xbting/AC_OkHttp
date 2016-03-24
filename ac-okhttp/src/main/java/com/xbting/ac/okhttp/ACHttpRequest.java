@@ -27,9 +27,7 @@ public class ACHttpRequest {
     public Request request;
     public Call call;
 
-    /**
-     * 请求监听器
-     */
+
     public ACHttpRequestListener listener;
 
     public ACHttpRequest(int id, String url, ACRequestParam reqData, ACHttpRequestListener listener) {

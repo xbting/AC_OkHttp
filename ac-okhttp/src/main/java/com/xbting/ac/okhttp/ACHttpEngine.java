@@ -35,7 +35,7 @@ public class ACHttpEngine {
 
     public ACHttpEngine() {
         okHttpClient = new OkHttpClient();
-        okHttpClient.setConnectTimeout(ACHttpConfig.CONNECTION_TIMEOUT, TimeUnit.MILLISECONDS);//超时时间30秒
+        okHttpClient.setConnectTimeout(ACHttpConfig.CONNECTION_TIMEOUT, TimeUnit.MILLISECONDS);
         okHttpClient.setReadTimeout(ACHttpConfig.SO_TIMEOUT, TimeUnit.MILLISECONDS);
 
         mHandler = new Handler(Looper.getMainLooper());
