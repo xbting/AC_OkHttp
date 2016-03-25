@@ -25,4 +25,25 @@ public class ACRequestParam {
         }
         return map;
     }
+
+    public final String getURLParams() {
+        String paramUrl="";
+        StringBuffer sb = new StringBuffer();
+        try {
+            Field[] fields = this.getClass().getDeclaredFields();
+            for (Field f : fields) {
+                f.setAccessible(true);
+                sb.append(f.getName());
+                sb.append("=");
+                sb.append(f.get(this));
+            }
+            paramUrl =sb.toString().substring(1);
+        } catch (IllegalArgumentException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+        return paramUrl;
+    }
+
 }
